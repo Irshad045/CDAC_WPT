@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>word count</title>
+    <script type="text/javascript">
+        function print_ans(ans) {
+            for (let [key, value] of ans) {
+                console.log(`${key} occurs ${value} times`);
+
+            }
+
+        }
+        function count(str, out) {
+            for (let i = 0; i < str.length; i++) {
+
+                let k = out.get(str[i]);
+                out.set(str[i], k + 1);
+
+
+            }
+            print_ans(out);
+        }
+        function count_occurs(d, call_back) {
+            if (d.length === 0) {
+                console.log(" empty ");
+                return;
+            }
+            else {
+                let ans = new Map();
+                for (let i = 0; i < d.length; i++) {
+                    ans.set(d[i], 0);
+                }
+
+                call_back(d, ans);
+
+            }
+
+        }
+        let d = "A computer is a machine that can be programmed to carry out sequences of arithmetic or logical operations automatically";
+        count_occurs(d, count);
+
+        document.write("Space is also counting")
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Fruit shop</title>
+	<script type="text/javascript">
+		var fruit_lst = [] 
+
+		function add_fruit() {
+			for(var i=0 ;  i < 3 ;i++){
+				var n = prompt("Enter name");
+				var Id = prompt("Enter Id");
+                var rate = prompt("Enter rate of the item")
+				var obj = {
+					name:n,
+					Id:Id,
+                    rate:rate
+				}
+				fruit_lst.push(obj)
+			}
+		}
+
+		add_fruit();
+		console.log(fruit_lst);
+		function display(){
+			var str = "<table border = 1>"
+			for( var i = 0 ; i < fruit_lst.length; i++ ){
+				str += "<tr><td>"+ fruit_lst[i].name+"</td><td>"+fruit_lst[i].Id+"</td></tr>"+fruit_lst[i].rate+"</td></tr>"
+				}
+			str = str + "</table>"
+			document.write(str);
+		
+		}
+		display()
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
